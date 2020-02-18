@@ -5,11 +5,11 @@
 Install
 
 ```sh
-npm install
+npm install -g @web-tk/project-templates
 ```
 
 Run Help
 
 ```sh
-node src/index.js --help
+project-templates --help
 ```
