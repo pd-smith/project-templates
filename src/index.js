@@ -33,7 +33,7 @@ const cliOptions = commandLineArgs(optionPrompts);
 
 if (cliOptions.help) {
     console.log('OPTIONS:');
-    optionPrompts.forEach(prompt => {
+    optionPrompts.forEach((prompt) => {
         if (prompt.name !== 'help') {
             console.log(`--${prompt.name}, -${prompt.alias}`);
             console.log('\t' + prompt.help + '\n');
@@ -47,7 +47,7 @@ const projectPath = `./${cliOptions.name}`;
 
 async function preflightChecks() {
     const requiredOptionErrors = optionPrompts
-        .map(option => {
+        .map((option) => {
             if (option.required) {
                 if (!cliOptions[option.name]) {
                     return option.name;
