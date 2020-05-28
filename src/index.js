@@ -4,7 +4,9 @@ const fs = require('fs-extra');
 const path = require('path');
 const commandLineArgs = require('command-line-args');
 
-const validProjectTypes = fs.readdirSync(path.resolve('./_templates/'));
+const validProjectTypes = fs.readdirSync(
+    path.resolve(path.join(__dirname, '../_templates/'))
+);
 const optionPrompts = [
     {
         name: 'type',
@@ -42,7 +44,9 @@ if (cliOptions.help) {
     process.exit(0);
 }
 
-const templatePath = path.resolve(`./_templates/${cliOptions.type}`);
+const templatePath = path.resolve(
+    path.join(__dirname, `../_templates/${cliOptions.type}`)
+);
 const projectPath = `./${cliOptions.name}`;
 
 async function preflightChecks() {
